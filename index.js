@@ -22,6 +22,7 @@ app.use(
   session({
     secret: "random very secure text",
     resave: false,
+    maxAge: 24*60*60*1000,
     saveUninitialized: true,
     cookie: { secure: false },
   })
