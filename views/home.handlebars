@@ -1,0 +1,36 @@
+<h1>NeverNote</h1>
+<div id="addForm" class="note">
+    <h2>Add note</h2>
+    <form method="POST">
+        <input type="text" name="title" placeholder="Title">
+        <textarea name="content" rows="10" cols="30" placeholder="Content"></textarea>
+        <input type="checkbox" name="public">
+        <label for="public">Public</label>
+        <input type="submit">
+    </form>
+</div>
+<div class="app">
+    <div id="publicNotes">
+        <h2>Public Notes</h2>
+        {{#each publicNotes}}
+        <div class="note">
+            <span>{{{this.title}}}</span>
+            <p>{{{this.content}}}</p>
+        </div>
+        {{/each}}
+
+    </div>
+
+    <div id="privateNotes">
+        <h2>Private Notes</h2>
+        <form method="POST" action="/clear"><input type="submit" value="Delete all private notes"></form>
+        {{#each privateNotes}}
+        <div class="note">
+            <span>{{{this.title}}}</span>
+            <p>{{{this.content}}}</p>
+        </div>
+        {{/each}}
+    </div>
+
+
+</div>

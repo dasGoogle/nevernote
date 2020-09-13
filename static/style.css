@@ -1,0 +1,47 @@
+body {
+    font-family: sans-serif;
+}
+
+.note {
+    display: inline-block; 
+    box-shadow: grey 0 0 10px;
+    padding: 1em;
+    margin: 16px 16px;
+    max-width: 40%;
+    min-width: 20%;
+    border-radius: 10px;
+}
+
+.note span {
+    font-weight: bold;
+}
+
+.app {
+    height: 100vh;
+    margin-top: 0; 
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns:  50% 50%;
+    grid-template-areas: 
+    "public private"
+}
+
+#publicNotes {
+    grid-area: public;
+}
+
+#privateNotes {
+    grid-area: private;
+    overflow: hidden;
+}
+
+form input[type=text], input[type=submit], textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-sizing: border-box;  
+    border: grey solid 1px;
+}
